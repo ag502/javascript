@@ -106,3 +106,27 @@ JavaScript TIL
      - {key: value, key: value....} 로 선언
      - object 데이터 타입
      - 변수명[key] or 변수명.key로 요소 호출
+
+3. 코드의 흐름
+   - 함수 <br>
+     - function 함수명(파라미터)로 선언
+     - 내장함수
+       - Number(), String()
+       - ParseInt() <br>
+         문자와 숫자가 섞여 있을 때, 정수인 부분만 꺼내 형변환(단 숫자부분이 먼저 나와야 함 ex. "100세")
+       - ParseFloat() <br>
+       - alert() <br>
+         사용자에게 메세지를 띄워줌
+       - prompt() <br>
+         사용자에게 메세지를 띄우고, 문자열을 입력받음
+       - confirm() <br>
+         사용자에게 메세지를 띄우고, 확인과 취소를 누르게함
+   - if 문
+   - switch문
+   - For문
+     - for of <br>
+       for (value of array) {}
+     - for in <br>
+       for (index in array) {} <br>
+       array의 index를 반환
+   - while문
