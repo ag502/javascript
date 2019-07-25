@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>If Statement</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      var inputNumber = window.prompt("한 자리 숫자를 적어주세요.");
+
+      if (inputNumber === "7") {
+        alert("Lucky");
+      } else if (inputNumber === "0") {
+        alert("Zero");
+      } else {
+        alert("Unlucky");
+      }
+
+      var num = 12;
+
+      if (num % 2 === 0 && num % 3 === 0) {
+        console.log(num + "는 6의 배수입니다.");
+      } else {
+        console.log(num + "는 6의 배수가 아닙니다.");
+      }
+    </script>
+  </body>
+</html>
