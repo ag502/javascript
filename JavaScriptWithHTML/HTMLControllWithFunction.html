@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Travel Website</title>
+    <meta charset="UTF-8" />
+    <style>
+      .menu {
+        text-align: center;
+        margin: 60px 0px;
+      }
+
+      .menu a {
+        font-size: 16px;
+        font-family: "Helvetica", "sans-serif";
+        text-decoration: none;
+        color: #58595b;
+        margin: 0 10px;
+      }
+
+      #content-img {
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <a onclick="clickFirst()">First</a>
+      <a onclick="clickSecond()">Second</a>
+      <a onclick="clickThird()">Third</a>
+      <a onclick="clickForth()">Forth</a>
+    </div>
+    <img src="images/bgimg1.jpg" alt="" id="content-img" width="90%" />
+
+    <script>
+      function clickSecond() {
+        document.getElementById("content-img").src = "images/bgimg2.jpg";
+      }
+
+      function clickFirst() {
+        document.getElementById("content-img").src = "images/bgimg1.jpg";
+      }
+
+      function clickThird() {
+        document.getElementById("content-img").src = "images/bgimg3.jpg";
+      }
+
+      function clickForth() {
+        document.getElementById("content-img").src = "images/bgimg4.jpg";
+      }
+    </script>
+  </body>
+</html>
