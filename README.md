@@ -108,6 +108,7 @@ JavaScript TIL
      - 변수명[key] or 변수명.key로 요소 호출
 
 3. 코드의 흐름
+
    - 함수 <br>
      - function 함수명(파라미터)로 선언
      - 내장함수
@@ -130,3 +131,31 @@ JavaScript TIL
        for (index in array) {} <br>
        array의 index를 반환
    - while문
+
+---
+
+## 2019-07-26
+
+1. JavaScript로 HTML 다루기
+   - getElementbyId(태그 아이디) <br>
+     해당 아이디를 가지고 있는 태그를 참조
+   - jQuery <br>
+     - \$(태그 아이디).attr('바꿀 태그의 속성', '바꿀값');
+     - \$(태그 아이디).css('바꿀 CSS의 속성', '바꿀값');
+     - 이벤트, 이벤트 핸들링
+       - 처리방법
+         - HTML 태그에 직접 지정 <br>
+           ```HTML
+           <img src="images/..." onclick = "EventHandler()"/>
+           ```
+         - javascript에 지정
+           - jQuery
+             ```javascript
+             $("#아이디").on("click", EventHandler);
+             ```
+           - javascript
+             ```javascript
+             document
+               .getElementbyId("아이디")
+               .addEventListener("click", EventHandler);
+             ```
