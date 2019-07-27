@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Date</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      var today = new Date();
+
+      console.log("오늘 : " + today);
+      console.log("연도 : " + today.getFullYear());
+      console.log("월 : " + (today.getMonth() + 1));
+      console.log("날짜 : " + today.getDate());
+      console.log("요일 : " + today.getDay());
+      console.log("시간 : " + today.getHours());
+      console.log("분 : " + today.getMinutes());
+      console.log("초 : " + today.getSeconds());
+      console.log("ms : " + today.getMilliseconds());
+      console.log(today.toString());
+      console.log(today.toLocaleString());
+      console.log(today.toLocaleDateString());
+      console.log(today.toLocaleTimeString());
+
+      var date = new Date("June 11, 1988 05:25:30");
+      console.log(date.getTime() + "ms");
+      console.log(date.getTime() / 1000 + "초");
+      console.log(date.getTime() / 1000 / 60 + "분");
+      console.log(date.getTime() / 1000 / 60 / 60 + "시간");
+    </script>
+  </body>
+</html>
