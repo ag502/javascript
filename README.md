@@ -159,3 +159,41 @@ JavaScript TIL
                .getElementbyId("아이디")
                .addEventListener("click", EventHandler);
              ```
+
+---
+
+## 2019-07-27
+
+1.  JavaScript Package
+    - Math
+      - abs(절댓값)
+      - pow
+      - sqrt(제곱근)
+      - max
+      - min
+      - random
+      - round
+      - floor
+      - ceil
+    - String
+      - length
+      - charAt
+      - indexOf(searchValue)
+      - lastindexOf(searchValue)
+      - toUpperCase()
+      - toLowerCase()
+      - substring(indexStart, indexEnd)
+      - substr(start, length)
+      - trim()
+    - Array
+      - length()
+      - indexOf()
+      - lastindexOf()
+      - push()
+      - pop()
+      - join()
+    - Date
+      - new Date로 객체 생성
+      - getTime()
+      - getFullYear()
+        ....
