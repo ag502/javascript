@@ -197,3 +197,12 @@ JavaScript TIL
       - getTime()
       - getFullYear()
         ....
+
+---
+
+## 2019-07-28
+
+1. Audio
+   - new Audio(url or 파일 경로)
+   - play(), pause()으로 재생 제어
+   - currentTime으로 정지 후 재생 지점 지정
