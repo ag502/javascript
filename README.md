@@ -293,3 +293,11 @@ JavaScript TIL
      - \$('선택자').append(\$('선택자'))
      - \$('선택자').prepend(\$('선택자'))
      - \$('선택자').remove()
+   - 정교한 선택
+     - filter()
+     - not()
+     - eq()
+     - parent()
+     - children()
+     - sibllings()
+     - find()
