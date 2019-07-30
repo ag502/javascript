@@ -203,6 +203,68 @@ JavaScript TIL
 ## 2019-07-28
 
 1. Audio
+
    - new Audio(url or 파일 경로)
    - play(), pause()으로 재생 제어
    - currentTime으로 정지 후 재생 지점 지정
+
+2. Boolean
+
+   - 숫자
+     - 0 : false
+     - 양수 : true
+     - 음수 : true
+   - 문자열
+     - 빈 문자열 : false
+     - 비어있지 않은 문자열 : true
+   - 그 외
+     - null : false
+     - undefined : false
+     - NaN : false
+   - 활용예시
+
+     ```javascript
+     var str = "Hello";
+     console.log(!str); //false
+     console.log(!!str); //true
+     ```
+
+---
+
+## 2019-07-29
+
+1. DOM
+
+   - 문서 객체 모델 (Document Object Model) <br>
+     브라우저가 html문서를 tree형태로 인식
+   - javascript로 html의 태그를 변화 시키고 싶을 때<br>
+     html의 dom에 접근해 변화
+
+2. jQuery
+
+   - 동작원리
+
+     - \$('선택자'). 동작
+       - 동작
+         - 클래스 관련
+           ```javascript
+           $("#id").addClass("newClass");
+           $("#id").removeClass("newClass");
+           $("#id").toggleClass("newClass");
+           $("#id").hasClass("newClass");
+           ```
+         - 속성관련
+           ```javascript
+           $("img").attr("src");
+           $("img").attr("src", "images/..");
+           $("p").text();
+           $("h1").text("Hello");
+           $("h1").html("<i>Good</i>");
+           ```
+         - 스타일관련
+           ```javascript
+           $("#id").css("background-color", "#ffffff");
+           $("#id").css("background-color");
+           ```
+
+   - jQuery의 선택자는 CSS에서 사용하던 선택자를 그대로 사용가능
