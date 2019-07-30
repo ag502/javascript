@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>filter</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div class="box" id="box-1">
+      <button class="color-1">-</button>
+      <button class="color-2">-</button>
+      <button class="color-3">-</button>
+      <button class="color-4">-</button>
+    </div>
+
+    <div class="box" id="box-2">
+      <button class="color-1">-</button>
+      <button class="color-2">-</button>
+      <button class="color-3">-</button>
+      <button class="color-4">-</button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      /*$("#box-1 button").text("SELECTED!");*/
+      /*$("#box-2 button")
+        .filter(".color-3")
+        .text("SELECTED!");*/
+
+      /*for (item of document.querySelectorAll("#box-1 button")) {
+        item.innerText = "SELECTED!";
+      }
+
+      document.querySelectorAll("#box-2 button.color-3")[0].innerText =
+        "SELECTED!";*/
+
+      /*$("#box-2 button")
+        .not(".color-3")
+        .text("SELECTED!");*/
+
+      /*var buttonList = document.querySelectorAll("#box-2 button");
+      for (item of buttonList) {
+        if (!item.classList.contains("color-3")) {
+          item.innerText = "SELECTED!";
+        }
+      }*/
+
+      /*$("#box-2 button")
+        .eq(1)
+        .text("SELECTED!");*/
+
+      /*$("#box-2 .color-1")
+        .parent()
+        .css("background-color", "black");*/
+
+      /*document.querySelectorAll(
+        "#box-2 .color-1"
+      )[0].parentNode.style.backgroundColor = "black";*/
+
+      /*$("#box-2")
+        .children(".color-3")
+        .css("background-color", "yellow");*/
+
+      /*var buttonList = document.getElementById("box-2").children;
+      for (item of buttonList) {
+        if (item.classList.contains("color-3")) {
+          item.style.background = "black";
+        }
+      }*/
+
+      /*$("#box-2 .color-2")
+        .siblings(".color-4")
+        .text("SELECTED!");*/
+
+      var secondButton = document.querySelectorAll("#box-2 .color-2")[0];
+
+      while (secondButton.nextElementSibling) {
+        var sibling = secondButton.nextElementSibling;
+        if (sibling.classList.contains("color-4")) {
+          sibling.innerText = "SELECTED";
+          break;
+        }
+        secondButton = sibling;
+      }
+    </script>
+  </body>
+</html>
