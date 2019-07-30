@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <button id="hello">Hello Codeit</button>
+
+    <ul id="todo-list">
+      <li class="item">청소</li>
+      <li class="item">코딩</li>
+      <li class="item">숙제</li>
+      <li class="item">영화</li>
+    </ul>
+
+    <h1 id="title">jQuery Test</h1>
+    <h1 id="title2">Test</h1>
+    <h1 id="title3">Good</h1>
+    <h1 id="title4">Hope</h1>
+    <h1 class="title5">Dream</h1>
+    <h1 class="title6">Dream</h1>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      console.log($("li"));
+
+      $("li").css("border", "1px solid red");
+
+      $("button").addClass("new-class");
+
+      $("#title").text("HI");
+      $("#title2").html("<i>Hello</i>");
+
+      document.getElementById("title3").innerText = "Good";
+      document.getElementById("title4").innerHTML = "<i>LOL</i>";
+
+      document.getElementsByClassName("title5")[0].innerText = "great";
+      document.getElementsByClassName("title6")[0].innerHTML = "<i>Hope</i>";
+    </script>
+  </body>
+</html>
