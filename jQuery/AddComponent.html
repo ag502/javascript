@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Component</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <button id="hello">Hello Codeit</button>
+
+    <ul id="todo-list">
+      <li class="item">청소</li>
+      <li class="item">코딩</li>
+      <li class="item">숙제</li>
+      <li class="item">영화</li>
+    </ul>
+
+    <ul class="list">
+      <li class="list-item">네이버</li>
+      <li class="list-item">카카오</li>
+      <li class="list-item">야놀자</li>
+      <li class="list-item">SK</li>
+    </ul>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      /*$("li").after('<li class = "itme"> 새로운 아이템 </li>');*/
+      $("#todo-list li:last-child").after(
+        '<li class ="item">새로운 아이템 </il>'
+      );
+      $("ul#todo-list").append('<li class = "item">New item</li>');
+      $("ul#todo-list").prepend('<li class = "item">New item</li>');
+
+      var list = document.createElement("li");
+      var listText = document.createTextNode("LG");
+      list.appendChild(listText);
+      list.setAttribute("class", "list-item");
+
+      var listParent = document.getElementsByClassName("list-item")[0]
+        .parentNode;
+      listParent.insertBefore(list, listParent.childNodes[0]);
+    </script>
+  </body>
+</html>

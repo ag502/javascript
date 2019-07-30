@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Component</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <button id="hello">Hello Codeit</button>
+
+    <ul id="todo-list">
+      <li id="cleaning" class="item">청소</li>
+      <li id="coding" class="item important">코딩</li>
+      <li id="homework" class="item important">숙제</li>
+      <li id="movie" class="item">영화</li>
+      <li id="vitamin" class="item">비타민</li>
+      <li id="gym" class="item">헬스장</li>
+      <li id="reading" class="item important">독서</li>
+    </ul>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      /*$("#cleaning").before('<li class = "item">피아노</li>');
+      $("#cleaning").before($("#movie"));
+      $("#cleaning").after($("#movie"));
+      $("#todo-list").prepend($(".important"));
+      $("#movie").remove();*/
+
+      var newList = document.createElement("li");
+      newList.innerText = "피아노";
+
+      var cleaning = document.getElementById("cleaning");
+      cleaning.parentNode.insertBefore(newList, cleaning);
+
+      var movie = document.getElementById("movie");
+      cleaning.parentNode.insertBefore(movie, cleaning.nextSibling);
+
+      var parentUl = document.getElementById("todo-list");
+      parentUl.appendChild(movie);
+
+      function prependChild(parentElement, element) {
+        var firstDescendent = parentElement.childNodes[0];
+        parentElement.insertBefore(element, firstDescendent);
+      }
+
+      prependChild(parentUl, cleaning);
+
+      var importantThings = document.getElementsByClassName("important");
+
+      for (items of importantThings) {
+        parentUl.appendChild(items);
+      }
+
+      for (items of importantThings) {
+        prependChild(parentUl, items);
+      }
+
+      movie.remove();
+      cleaning.remove();
+    </script>
+  </body>
+</html>
