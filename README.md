@@ -330,3 +330,20 @@ JavaScript TIL
    - 윈도우 창 이벤트
      - move : 윈도우나 프레임을 움직일때 발생
      - resize : 윈도우나 프레임 사이즈를 움직일때 발생
+
+---
+
+### 2019-08-03
+
+1. Event
+
+   - script태그를 body의 끝부분이 아닌 head 부분에 넣을 수 있음 <br> 그럴 경우 html이 모두 객체화 되지 않았기 때문에 함수 부분이 제대로 실행이 되지 않음 <br>
+   - \$(document).ready(function() {})를 사용하면 DOM 객체가 만들어 질때 까지 기다렸다 function 실행
+
+2. jQuery pt.2
+   - \$("선택자").hide()
+   - \$("선택자").show()
+   - \$("선택자").fadeIn(ms)
+   - \$("선택자").fadeOut(ms)
+   - \$("선택자").scrollTop()
+   - \$('html, body).animate({scrollTop : 0}, 500)
