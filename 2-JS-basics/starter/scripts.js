@@ -110,6 +110,7 @@ In the end, John would like to have 2 arrays:
 (NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
 */
 
+/*
 function calculateTip(bill) {
     var tip = -1;
     if (bill < 50) {
@@ -126,3 +127,34 @@ var allThreeTips = [calculateTip(124), calculateTip(48), calculateTip(268)];
 var finalPaidAmounts = [124 + allThreeTips[0], 48 + allThreeTips[1], 268 + allThreeTips[2]];
 
 console.log('Tips: ', allThreeTips, 'Total Paid: ', finalPaidAmounts);
+*/
+
+/*****************************
+* Objects and properties
+*/
+
+// Objerct literal
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false
+};
+
+console.log(john.firstName);
+console.log(john['lastName']);
+var x = 'birthYear';
+console.log(john[x]);
+
+john.job = 'designer';
+john['isMarried'] = true;
+console.log(john);
+
+// new Object syntax
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1969;
+jane['lastName'] = 'Smith';
+console.log(jane);
