@@ -196,6 +196,7 @@ Let's remember the first coding challenge where Mark and John compared their BMI
 Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
 */
 
+/*
 var mark = {
     firstName: 'Mark',
     lastName: 'Smith',
@@ -219,3 +220,35 @@ var john = {
 }
 
 console.log(mark.calcBMI() > john.calcBMI() ? "Mark's BMI is greater than John's BMI" : (mark.BMI < john.BMI ? "John's BMI is greater than Mark's BMI" : 'They are Same'));
+*/
+
+/*****************************
+* Loops and iteration
+*/
+
+var john = ['John', 'Smith', 1990, 'designer', false];
+
+
+for (var i = 0; i < 20; i += 2) {
+    console.log(i);
+}
+
+for (var i = 0; i < john.length; i++) {
+    console.log(john[i]);
+}
+
+
+// continue and break statement
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') {
+        continue;
+    }
+    console.log(john[i]);
+}
+
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') {
+        break;
+    }
+    console.log(john[i]);
+}
