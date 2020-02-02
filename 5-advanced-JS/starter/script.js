@@ -157,6 +157,7 @@ interviewQuestion('teacher')('Mark');
 
 // IIFE(Immediately Invoked Function Expression)
 
+/*
 function game() {
     var score = Math.random() * 10;
     console.log(score >= 5);
@@ -173,3 +174,36 @@ game();
     var score = Math.random() * 10;
     console.log(score >= 5 - goodLuck);
 })(5);
+*/
+
+// Closures
+// An inner function has always access to the variables and parameters of its outer function, even after the outer function has returned.
+function retirement(retirementAge) {
+    var a = ' years left until retirement.';
+    return function(yearOfBirth) {
+        var age = 2016 - yearOfBirth;
+        console.log((retirementAge - age) + a);
+    }
+} 
+
+var retirementUS = retirement(66);
+var retirementGermany = retirement(65);
+var retirementIceland = retirement(67);
+
+retirementGermany(1995);
+retirementUS(1995);
+retirementIceland(1995);
+
+function interviewQuestion(job) {
+    return function(name) {
+        if (job === 'designer') {
+            console.log(name + ', can you please explain what UX design is?');
+        } else if (job === 'teacher') {
+            console.log('What subject do you teach, ' + name + '?');
+        } else {
+            console.log('Hello ' + name + ', what do you do?');
+        }
+    }
+}
+
+interviewQuestion('teacher')('John');
