@@ -111,6 +111,7 @@ console.log(firstName.repeat(5));
 
 // Lecture: Arrow Functions
 
+/*
 const years = [1990, 1965, 1982, 1937];
 
 // ES5
@@ -132,3 +133,72 @@ ages6 = years.map((cur, idx) => {
     return `Age element ${idx + 1}: ${2020 - cur}.`;
 });
 console.log(ages6);
+*/
+
+// Lecture: Arrow Functions 2
+
+// ES5
+var box5 = {
+    color: 'green',
+    position: 1,
+    clickMe: function() {
+        // var self = this;
+        document.querySelector('.green').addEventListener('click', function() {
+            var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+            alert(str);
+        }.bind(this));
+    }
+}
+// box5.clickMe();
+
+// ES6
+var box6 = {
+    color: 'green',
+    position: 1,
+    clickMe: function() {
+        document.querySelector('.green').addEventListener('click', () => {
+            var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+            alert(str);
+        });
+    }
+}
+// box6.clickMe();
+
+/*
+var box66 = {
+    color: 'green',
+    position: 1,
+    clickMe: () => {
+        document.querySelector('.green').addEventListener('click', () => {
+            var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+            alert(str);
+        });
+    }
+}
+box66.clickMe();
+*/
+
+function Person(name) {
+    this.name = name;
+}
+
+// ES5
+
+// myFriends5는 this(객체)에 묶여 있으나 내부함수들은 window에 묶여있음
+Person.prototype.myFriends5 = function(friends) {
+    var arr = friends.map(function(el) {
+        return this.name + ' is friends with ' + el;
+    }.bind(this));
+    console.log(arr);
+}
+
+var friends = ['Bob', 'Jane', 'Mark'];
+new Person('John').myFriends5(friends);
+
+// ES6
+Person.prototype.myFriends6 = function(friends) {
+    var arr = friends.map(el => `${this.name} is friends with ${el}`);
+    console.log(arr);
+}
+
+new Person('Mike').myFriends6(friends);
