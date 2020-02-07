@@ -87,6 +87,7 @@ console.log(c); // It works
 
 // Lecture: Strings
 
+/*
 let firstName = 'John';
 let lastName = 'Smith';
 const yearOfBirth = 1990;
@@ -106,3 +107,28 @@ console.log(n.startsWith('J'));
 console.log(n.endsWith('h'));
 console.log(n.includes('oh'));
 console.log(firstName.repeat(5));
+*/
+
+// Lecture: Arrow Functions
+
+const years = [1990, 1965, 1982, 1937];
+
+// ES5
+var ages5 = years.map(function(cur) {
+    return 2020 - cur + 1;
+});
+console.log(ages5);
+
+// ES6
+let ages6 = years.map(cur => 2020 - cur + 1);
+console.log(ages6);
+
+ages6 = years.map((cur, idx) => `Age element ${idx + 1}: ${2020 - cur}.`);
+console.log(ages6);
+
+ages6 = years.map((cur, idx) => {
+    const now = new Date().getFullYear();
+    const age = now - cur + 1;
+    return `Age element ${idx + 1}: ${2020 - cur}.`;
+});
+console.log(ages6);
