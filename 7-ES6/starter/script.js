@@ -16,6 +16,7 @@ console.log(name6);
 
 // ES5
 
+/*
 function driversLicence5(passedTest) {
     if (passedTest) {
         console.log(firstName);
@@ -41,6 +42,7 @@ function driversLicence6(passedTest) {
 }
 
 driversLicence6(true);
+*/
 
 /*
 let i = 23;
@@ -52,6 +54,7 @@ for (let i = 0; i < 5; i++) {
 console.log(i);
 */
 
+/*
 var i = 23;
 
 for (var i = 0; i < 5; i++) {
@@ -59,3 +62,23 @@ for (var i = 0; i < 5; i++) {
 }
 
 console.log(i);
+*/
+
+// Lecture: Blocks and IIFEs
+
+//ES6
+{
+    const a = 1;
+    let b = 2;
+    var c = 3;
+}
+
+// console.log(a + b); // It doesn't work
+console.log(c); // It works
+
+// ES5
+(function() {
+    var c = 3;
+})();
+
+// console.log(c);
