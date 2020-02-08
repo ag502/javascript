@@ -483,6 +483,7 @@ Person6.greeting();
 
 // ES5
 
+/*
 var Person5 = function(name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
@@ -542,3 +543,97 @@ class Athlete6 extends Person6 {
 }
 
 const johnAthlete6 = new Athlete6('John', 1990, 'Swimmer', 3, 10);
+*/
+
+// Lecture: ProtoType Chain
+
+/* 객체 생성 방법 */
+
+/*
+// 객체 리터럴
+var obj1 = {};
+obj1.name = 'Lee'
+
+var obj2 = new Object();
+obj2.name = 'Lee';
+
+function F() {}
+var obj3 = new F();
+obj3.name = 'Lee';
+*/
+
+/* 생성자 함수와 인스턴스 생성 */
+
+/*
+function Person(name) {
+    this.name = name;
+    this.setName = function(name) {
+        this.name = name;
+    }
+    this.getName = function(name) {
+        return this.name;
+    }
+}
+
+var me = new Person('Lee');
+var you = new Person('Kim');
+*/
+
+/* 프로토타입 체인과 메소드 정의 */
+
+/*
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.setName = function(name) {
+    this.name = name;
+};
+
+Person.prototype.getName = function() {
+    return this.name;
+}
+
+var me = new Person('Lee');
+var you = new Person('Kim');
+*/
+
+/* 상속 */
+
+/*
+var Parent = (function() {
+
+    function Parent(name) {
+        this.name = name;
+    }
+
+    Parent.prototype.sayHi = function () {
+        console.log('HI! ' + this.name);
+    }
+
+    return Parent;
+})();
+
+var Child = (function() {
+    function Child(name) {
+        Parent.call(this, name);
+        // this.name = name;
+    }
+
+    // Child.prototype = new Parent();
+    Child.prototype = Object.create(Parent.prototype);
+
+    Child.prototype.sayHi = function() {
+        console.log('안녕하세요!' + this.name);
+    }
+
+    Child.prototype.sayBye = function() {
+        console.log('안녕히 가세요!' + this.name);
+    }
+
+    return Child;
+})();
+
+var parent = new Parent('Parent');
+var child = new Child('Child');
+*/
