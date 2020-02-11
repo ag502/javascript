@@ -27,3 +27,4 @@ FurnitureShopPJ/
 *.jpg
 *.png
 *.svg
+node_modules/
