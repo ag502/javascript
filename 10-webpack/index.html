@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <script src='./src/hello.js'></script>
+    <script src='./src/world.js'></script> -->
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello, Webpack</h1>
+    <div id="root"></div>
+    <script type="module">
+        import hello_world from "./src/hello.js";
+        import world_word from "./src/world.js";
+        document.querySelector('#root').innerHTML = hello_world + world_word;
+    </script>
+</body>
+</html>
