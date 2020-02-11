@@ -6,5 +6,16 @@ module.exports = {
         path: path.resolve(__dirname, "public"),
         filename: 'index_bundle.js'
     },
-    mode: 'development'
+    mode: 'development',
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                ]
+            }
+        ]
+    }
 }
