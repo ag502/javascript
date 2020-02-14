@@ -1,4 +1,6 @@
-import str from "./models/Search";
-import {add as a, multiply as m, ID} from "./views/searchView"
-// import * as searchView from './views/searchView'
-console.log(`Using imported functions! ${a(ID, 2)} and ${m(3, 5)}. ${str}.`)
+import Search from './models/Search'
+
+const search = new Search('pizza');
+
+console.log(search);
+search.getResults().then(() => console.log(search.recipe));
