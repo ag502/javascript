@@ -59,3 +59,45 @@ function displayShippingIncludes(sections) {
 console.log(displayShipping(sections));
 console.log(displayShipping2(sections));
 console.log(displayShippingIncludes(sections));
+
+/**
+ * Spread Syntax
+ */
+const array = [1, 2, 3, 4, 5];
+
+function removeItem(items, removable) {
+  const updated = [];
+  for (let i = 0; i < items.length; i++) {
+    if (items[i] !== removable) {
+      updated.push(items[i]);
+    }
+  }
+  return updated;
+}
+
+// console.log(removeItem(array, 5));
+
+function removeItemsSplice(items, removable) {
+  const index = items.indexOf(removable);
+  items.splice(index, 1);
+  return items;
+}
+
+// console.log(removeItemsSplice(array, 5));
+// console.log(array);
+
+function removeItemSlice(items, removable) {
+  const index = items.indexOf(removable);
+  return items.slice(0, index).concat(items.slice(index + 1));
+}
+
+// console.log(removeItemSlice(array, 5));
+// console.log(array);
+
+function removeItemsSpread(items, removable) {
+  const index = items.indexOf(removable);
+  return [...items.slice(0, index), ...items.slice(index + 1)];
+}
+
+console.log(removeItemsSpread(array, 5));
+console.log(array);

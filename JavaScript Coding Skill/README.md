@@ -29,3 +29,16 @@
 1. 배열로 유연한 컬렉션을 생성하라.
 
 2. Includes()로 존재여부를 확인하라.
+
+3. 펼침 연산자로 배열을 본떠라.
+
+```javascript
+function removeItmeSpread(items, removable) {
+  const index = items.indexOf(removable);
+  return [...items.slice(0, index), ...items.slice(index + 1)];
+}
+```
+
+4. push() 메서드 대신 펼침 연산자로 원본 변경을 피하라.
+
+5. 펼침 연산자로 정렬에 의한 혼란을 피하라.
