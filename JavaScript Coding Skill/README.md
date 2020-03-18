@@ -42,3 +42,5 @@ function removeItmeSpread(items, removable) {
 4. push() 메서드 대신 펼침 연산자로 원본 변경을 피하라.
 
 5. 펼침 연산자로 정렬에 의한 혼란을 피하라.
+
+   `sort()`는 원본배열을 조작하기 때문에 복사후 정렬

@@ -101,3 +101,42 @@ function removeItemsSpread(items, removable) {
 
 console.log(removeItemsSpread(array, 5));
 console.log(array);
+
+/**
+ * Sort
+ */
+
+const children = [
+  {
+    name: "Joe",
+    years: 10
+  },
+  {
+    name: "Theo",
+    years: 5
+  },
+  {
+    name: "Dyan",
+    years: 10
+  }
+];
+
+function sortByYears(a, b) {
+  if (a.years === b.years) {
+    return 0;
+  }
+  return a.years - b.years;
+}
+
+function sortByName(a, b) {
+  if (a.name === b.name) {
+    return 0;
+  }
+  return a.name - b.name ? 1 : -1;
+}
+
+// children.sort(sortByYears);
+// console.log(children);
+
+children.sort(sortByName);
+console.log(children);
