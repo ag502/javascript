@@ -44,3 +44,49 @@ function removeItmeSpread(items, removable) {
 5. 펼침 연산자로 정렬에 의한 혼란을 피하라.
 
    `sort()`는 원본배열을 조작하기 때문에 복사후 정렬
+
+## 3. 특수한 컬렉션을 이용해 코드 명료성을 극대화 하라.
+
+1.  객체를 이용해 정적인 키-값을 탐색하라.
+    변경이 없는 값을 객체로 선언
+
+2.  Object.assign()로 조작없이 객체를 생성하라.
+
+    ```javascript
+    const object = {
+      name: {
+        first: '',
+        last: ''
+      }
+      years: 20
+    }
+    ```
+
+    얕은복사
+
+    ```javascript
+    Object.assign({}, object);
+    ```
+
+    단순 값만 복사, 내부에 참조값이 있을경우 참조값만 복사.
+    원본을 변경시 얕게 복사된 객체도 변경
+
+    깊은 복사
+
+    ```javascript
+    Object.assign({}, object, {
+      name: Object.assign({}, object.name)
+    });
+    ```
+
+3.  객체 펼침 연산자로 정보를 갱신 하라.
+
+4.  맵으로 명확하게 키-값 데이터를 갱신하라.
+
+    ```javascript
+    const filters = new Map().set([key], [value]).set([key], [value]);
+    filters.get([key]);
+    filters.clear();
+    ```
+
+5.  맵과 펼침 연산자로 키-값 데이터를 순회하라.
