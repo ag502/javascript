@@ -90,3 +90,13 @@ function removeItmeSpread(items, removable) {
     ```
 
 5.  맵과 펼침 연산자로 키-값 데이터를 순회하라.
+
+6.  맵 생성시 부수효과를 피해라.
+
+    ```javascript
+    function applyMapCopy(map, defaults) {
+      return new Map([...defaults, ...map]);
+    }
+    ```
+
+7.  세트를 이용해 고유값을 관리하라.
