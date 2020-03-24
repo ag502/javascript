@@ -138,3 +138,14 @@ function removeItmeSpread(items, removable) {
      .map(cur => cur)
      .forEach(cur => console.log(cur));
    ```
+
+7. reduce()로 배열 데이터를 변환하라.
+   ```javascript
+   const aggregated = temp.reduce((obj, cur) => {
+     const counter = obj[cur.language] || 0;
+     return {
+       ...obj,
+       [cur.language]: counter + 1
+     };
+   }, {});
+   ```

@@ -143,3 +143,68 @@ sailors
   .filter(member => member.active)
   .map(sailor => sailor.email || `${sailor.name}@wiscsail.io`)
   .forEach(member => console.log(member));
+
+/**
+ * reduce
+ */
+
+const copy = ["veni", "vedi", "veci"].reduce((acc, cur) => [...acc, cur], []);
+
+console.log(copy);
+
+const dogs = [
+  {
+    이름: "맥스",
+    크기: "소형견",
+    견종: "보스턴테리어",
+    색상: "검정색"
+  },
+  {
+    이름: "도니",
+    크기: "대형견",
+    견종: "래브라도레트리버",
+    색상: "검정색"
+  },
+  {
+    이름: "섀도",
+    크기: "중형견",
+    견종: "래브라도레트리버",
+    색상: "갈색"
+  }
+];
+
+const color = dogs.reduce((colors, dog) => {
+  if (colors.includes(dog["색상"])) {
+    return colors;
+  }
+  return [...colors, dog["색상"]];
+}, []);
+
+const developer = [
+  {
+    name: "Jeff",
+    language: "php"
+  },
+  {
+    name: "Ashley",
+    language: "python"
+  },
+  {
+    name: "Sara",
+    language: "python"
+  },
+  {
+    name: "Joe",
+    language: "javascript"
+  }
+];
+
+const aggregated = developer.reduce((obj, cur) => {
+  const counter = obj[cur.language] || 0;
+  return {
+    ...obj,
+    [cur.language]: counter + 1
+  };
+}, {});
+
+console.log(aggregated);
