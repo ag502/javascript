@@ -208,3 +208,40 @@ const aggregated = developer.reduce((obj, cur) => {
 }, {});
 
 console.log(aggregated);
+
+/**
+ * for in, for of
+ */
+
+const firms = new Map()
+  .set(10, "Ivie Group")
+  .set(23, "Soundscaping Source")
+  .set(31, "Big 6");
+
+const entries = [...firms];
+
+for (let i = 0; i < entries.length; i++) {
+  const [id, name] = entries[i];
+  console.log(id, name);
+}
+
+for (const firm of firms) {
+  const [id, name] = firm;
+  console.log(id, name);
+}
+
+const firmObj = {
+  10: "Ivie Group",
+  23: "Soundscaping Source",
+  31: "Big 6"
+};
+
+for (const id in firmObj) {
+  console.log(id);
+}
+
+const test = [1, 2, 3];
+
+for (const i of test) {
+  console.log(i);
+}

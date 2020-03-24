@@ -140,6 +140,7 @@ function removeItmeSpread(items, removable) {
    ```
 
 7. reduce()로 배열 데이터를 변환하라.
+
    ```javascript
    const aggregated = temp.reduce((obj, cur) => {
      const counter = obj[cur.language] || 0;
@@ -148,4 +149,16 @@ function removeItmeSpread(items, removable) {
        [cur.language]: counter + 1
      };
    }, {});
+   ```
+
+8. for...in 문과 for..of문으로 반복문을 정리하라.
+
+   ```javascript
+   for (const temp of iterator) {
+     // iterator 순회
+   }
+
+   for (const key in object) {
+     // object key 순회
+   }
    ```
