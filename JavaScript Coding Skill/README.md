@@ -108,3 +108,15 @@ function removeItmeSpread(items, removable) {
 2. 삼항 연산자로 빠르게 데이터를 확인하라.
 
 3. 단락 평가를 이용해 효율성을 극대화 하라.
+
+## 5. 반복문을 단순하게 만들어라.
+
+1. 화살표 함수로 반복문을 단순하게 만들어라.
+
+2. 배열 메서드로 반복문을 짧게 작성하라.
+
+3. map() 메서드로 비슷한 길이의 배열을 생성하라.
+
+   ```javascript
+   const temp = array.map((cur, idx, arr) => console.log(cur));
+   ```
