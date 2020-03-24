@@ -120,3 +120,21 @@ function removeItmeSpread(items, removable) {
    ```javascript
    const temp = array.map((cur, idx, arr) => console.log(cur));
    ```
+
+4. filter()와 find()로 데이터의 부분집합을 생성하라.
+
+   ```javascript
+   const temp = array.filter((cur, idx, arr) => true);
+   const temp = array.find((cur, idx, arr) => true);
+   ```
+
+5. forEach()로 동일한 동작을 적용하라.
+
+6. 체이닝으로 메서드를 연결하라.
+
+   ```javascript
+   temp
+     .filter(cur => true)
+     .map(cur => cur)
+     .forEach(cur => console.log(cur));
+   ```
