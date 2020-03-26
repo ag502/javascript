@@ -162,3 +162,33 @@ function removeItmeSpread(items, removable) {
      // object key 순회
    }
    ```
+
+## 6 매개변수와 return 문을 정리하라.
+
+1. 매개변수 기본값을 생성하라.
+
+2. 해체 할당으로 객체 속성에 접근하라.
+
+   ```javascript
+   const {
+     title = "Anonymous",
+     loaction: [logitude, latitude],
+     test: { a, b },
+     src: url
+   } = object;
+   ```
+
+3. 키-값 할당을 단순화 하라.
+
+4. 나머지 매개변수로 여러 개의 인수를 변수로 전달하라.
+
+   ```javascript
+   function args() {
+     const arr = Array.prototype.slice.call(argument, 1);
+     console.log(arguments);
+   }
+
+   function args(...args) {
+     console.log(args);
+   }
+   ```
