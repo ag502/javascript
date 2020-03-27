@@ -220,3 +220,31 @@ function removeItmeSpread(items, removable) {
    ```
 
 3. 커링과 배열 메서드를 조합한 부분 적용 함수를 사용하라.
+
+   ```javascript
+   const identity = field => {
+     return value => {
+       return dog => dog[field] === value;
+     };
+   };
+
+   const identity = field => value => dog => dog[field] === value;
+
+   const getDogNames = (dogs, filterFunc) => {
+     return dogs.filter(filterFunc).map(dog => dog["이름"]);
+   };
+
+   const colorCheck = identity("색상");
+   const stateCheck = identity("지역");
+
+   getDogNames(dogs, colorCheck("갈색"));
+   getDogNames(dogs, stateCheck("캔자스"));
+
+   const allFilters = (dogs, ...checks) => {
+     return dogs.filter(dog => checks.every(check => check(dog)));
+   };
+
+   allFilters(dog, colorCheck("갈색"), stateCheck("캔자스"));
+   ```
+
+4. 화살표 함수로 문맥 혼동을 피하라.

@@ -121,5 +121,84 @@ const dogs = [
     견종: "보스턴테리어",
     지역: "위스콘신",
     색상: "검정색"
+  },
+  {
+    이름: "도니",
+    무게: 90,
+    견종: "래브라도레트리버",
+    지역: "캔자스",
+    색상: "검정색"
+  },
+  {
+    이름: "섀도",
+    무게: 40,
+    견종: "래브라도레트리버",
+    지역: "위스콘신",
+    색상: "갈색"
   }
 ];
+
+function getDogsNames(dogs, filter) {
+  const [key, value] = filter;
+
+  return dogs.filter(dog => dog[key] === value).map(dog => dog["이름"]);
+}
+
+console.log(getDogsNames(dogs, ["색상", "검정색"]));
+
+function getDogsNamesCondition(dogs, filterFunc) {
+  return dogs.filter(filterFunc).map(dog => dog["이름"]);
+}
+
+console.log(getDogsNamesCondition(dogs, dog => dog["무게"] < 20));
+
+// const weightCheck = weight => {
+//   return dog => dog["무게"] < weight;
+// };
+
+const weightCheck = weight => dog => dog["무게"] < weight;
+
+console.log(getDogsNamesCondition(dogs, weightCheck(20)));
+
+const identity = field => value => dog => dog[field] === value;
+
+// const identity = field => {
+//   return value => {
+//     return dog => dog[field] === value;
+//   };
+// };
+
+const colorCheck = identity("색상");
+const stateCheck = identity("지역");
+
+console.log(getDogsNamesCondition(dogs, colorCheck("갈색")));
+console.log(getDogsNamesCondition(dogs, stateCheck("캔자스")));
+
+function allFilters(dogs, ...checks) {
+  return dogs
+    .filter(dog => checks.every(check => check(dog)))
+    .map(dog => dog["이름"]);
+}
+
+allFilters(dogs, colorCheck("검정색"), stateCheck("캔자스"));
+
+/**
+ * Context
+ */
+
+const validator = {
+  message: "는 유효하지 않습니다.",
+  //   setInvalidMessage: function(field) {
+  //     return `${field}${this.message}`;
+  //   }
+  //   setInvalidMessage: function(...fields) {
+  //     return fields.map(function(field) {
+  //       return `${field}${this.message}`;
+  //     });
+  //   }
+  setInvalidMessage: function(...fields) {
+    return fields.map(field => `${field}${this.message}`);
+  }
+};
+
+console.log(validator.setInvalidMessage("도시", "시골"));
