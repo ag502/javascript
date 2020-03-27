@@ -163,7 +163,7 @@ function removeItmeSpread(items, removable) {
    }
    ```
 
-## 6 매개변수와 return 문을 정리하라.
+## 6. 매개변수와 return 문을 정리하라.
 
 1. 매개변수 기본값을 생성하라.
 
@@ -192,3 +192,31 @@ function removeItmeSpread(items, removable) {
      console.log(args);
    }
    ```
+
+## 7. 유연한 함수를 만들어라.
+
+1. 화살표 함수로 복잡도를 낮춰라.
+
+   ```javascript
+   const func = args => `${args}`;
+
+   const func = ({ a, b }) => `${a}${b}`;
+
+   const func = ({ a, b }) => ({ a: "1", b: "2" });
+   ```
+
+2. 부분 적용 함수로 단일 책임 매개변수를 관리하라.
+
+   ```javascript
+   const zip = (...cities) => {
+     return (...birds) => {
+       return cities.map((city, index) => [city, birds[index]]);
+     };
+   };
+
+   const zip = (...cities) => (...birds) => {
+     return cities.map((city, index) => [city, birds[indes]]);
+   };
+   ```
+
+3. 커링과 배열 메서드를 조합한 부분 적용 함수를 사용하라.
