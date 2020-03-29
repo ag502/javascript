@@ -192,3 +192,66 @@ class FamilyTree {
 const family = new FamilyTree();
 // console.log(family.getMembers());
 console.log([...family]);
+
+/**
+ * bind()
+ */
+
+// class Validator {
+//   constructor() {
+//     this.message = "가 유효하지 않습니다.";
+//   }
+
+//   setInvalidMessage(field) {
+//     return `${field}${this.message}`;
+//   }
+
+//   setInvalidMessages(...fields) {
+//     fields.map(this.setInvalidMessage);
+//   }
+// }
+
+// const validator = new Validator();
+// validator.setInvalidMessages("도시");
+
+// class Validator {
+//   constructor() {
+//     this.message = "가 유효하지 않습니다.";
+//     this.setInvalidMessage = field => `${field}${this.message}`;
+//   }
+
+//   setInvalidMessages(...fields) {
+//     return fields.map(this.setInvalidMessage);
+//   }
+// }
+
+// const validator = new Validator();
+// console.log(validator.setInvalidMessages("도시"));
+
+function sayMessage() {
+  return this.message;
+}
+
+const alert = {
+  message: "위험해"
+};
+
+console.log(sayMessage.bind(alert)());
+
+class Validator {
+  constructor() {
+    this.message = "가 유효하지 않습니다.";
+    //this.setInvalidMessage = this.setInvalidMessage.bind(this);
+  }
+
+  setInvalidMessage(field) {
+    return `${field}${this.message}`;
+  }
+
+  setInvalidMessages(...fields) {
+    return fields.map(this.setInvalidMessage.bind(this));
+  }
+}
+
+const validator = new Validator();
+console.log(validator.setInvalidMessages("도시"));

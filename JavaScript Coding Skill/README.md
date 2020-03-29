@@ -373,3 +373,21 @@ function removeItmeSpread(items, removable) {
     const g = new Generator();
     [...g]
     ```
+
+6.  bind()로 문맥 문제를 해결하라.
+
+    ```javascript
+    class Validator {
+      constructor() {
+        this.message = "가 유효하지 않습니다.";
+      }
+
+      setInvalidMessage(field) {
+        return `${field}${this.message}`;
+      }
+
+      setInvalidMessages(...fields) {
+        return fields.map(this.setInvalidMessage.bind(this));
+      }
+    }
+    ```
