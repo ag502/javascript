@@ -66,3 +66,129 @@ FlashCouponProto.prototype.constructor = FlashCoupon;
 
 const flashCouponProto = new FlashCouponProto(5);
 console.log(flashCouponProto.getExpirationMessage());
+
+/**
+ * getter, setter
+ */
+
+class CouponPrivate {
+  constructor(price, expiration) {
+    this.price = price;
+    this.expiration = expiration || "2주";
+  }
+
+  //   getPriceText() {
+  //     return `$ ${this.price}`;
+  //   }
+
+  //   getExpirationMessage() {
+  //     return `이 쿠폰은 ${this.expiration} 후에 만료 됩니다.`;
+  //   }
+
+  get priceText() {
+    return `$ ${this.price}`;
+  }
+
+  get expirationMessage() {
+    return `이 쿠폰은 ${this.expiration} 후에 만료됩니다.`;
+  }
+}
+
+const coupon3 = new CouponPrivate(5);
+// console.log(coupon3.getPriceText());
+// coupon3.price = 20;
+// console.log(coupon3.getPriceText());
+
+console.log(coupon3.priceText);
+
+class CouponGetSet {
+  constructor(price, expiration) {
+    this._price = price;
+    this.expiration = expiration || "2주";
+  }
+
+  get price() {
+    return this._price;
+  }
+
+  set price(price) {
+    this._price = price;
+  }
+}
+
+const coupon4 = new CouponGetSet(5);
+
+console.log(coupon4.price);
+coupon4.price = 11;
+console.log(coupon4.price);
+
+/**
+ * Generator, Iterable
+ */
+
+function* getCaliroTriology() {
+  yield "궁전 샛길";
+  yield "욕망의 궁전";
+  yield "설탕 거리";
+}
+
+const trilogy = getCaliroTriology();
+
+console.log(trilogy);
+console.log(trilogy.next());
+console.log(trilogy.next());
+console.log(trilogy.next());
+console.log(trilogy.next());
+
+console.log([...getCaliroTriology()]);
+
+const readingList = {
+  "깡패단의 방문": true,
+  "맨해튼 비치": false
+};
+
+for (const book of getCaliroTriology()) {
+  readingList[book] = false;
+}
+
+console.log(readingList);
+
+class FamilyTree {
+  constructor() {
+    this.family = {
+      name: "Doris",
+      child: {
+        name: "Martha",
+        child: {
+          name: "Dyan",
+          child: {
+            name: "Bea"
+          }
+        }
+      }
+    };
+  }
+
+  //   getMembers() {
+  //     const family = [];
+  //     let node = this.family;
+
+  //     while (node) {
+  //       family.push(node.name);
+  //       node = node.child;
+  //     }
+
+  //     return family;
+  //   }
+  *[Symbol.iterator]() {
+    let node = this.family;
+    while (node) {
+      yield node.name;
+      node = node.child;
+    }
+  }
+}
+
+const family = new FamilyTree();
+// console.log(family.getMembers());
+console.log([...family]);

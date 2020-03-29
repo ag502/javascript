@@ -304,3 +304,72 @@ function removeItmeSpread(items, removable) {
 
     class FlashCoupon extends Coupon {}
     ```
+
+3.  클래스로 기존의 프로토타입을 확장하라.
+
+4.  get과 set으로 인터페이스를 단순하게 만들어라.
+
+    ```javascript
+    class Coupon {
+      constructor(price, expiration) {
+        this._price = price;
+        this.expiration = expiration || "2주";
+      }
+
+      get price() {
+        return this._price;
+      }
+
+      set price(price) {
+        this._price = price;
+      }
+
+      get expiration() {
+        return this.expiration;
+      }
+
+      set expiration(expiration) {
+        this.expiration = expiration;
+      }
+    }
+    ```
+
+5.  제너레이터로 이터러블 속성을 생성하라.
+
+    ```javascript
+    function* getIterator() {
+      yield "a";
+      yield "b";
+      yield "c";
+    }
+
+    const iterator = getIterator();
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+
+    class Gernerator {
+      constructor() {
+        this.tree = {
+          name: 'a',
+          child: {
+            name: 'b',
+            child{
+              name:'c'
+            }
+          }
+        }
+      }
+
+      *[Symbol.iterator]() {
+        let node = this.tree;
+        while(node) {
+          yield node;
+          node = node.child;
+        }
+      }
+    }
+
+    const g = new Generator();
+    [...g]
+    ```
