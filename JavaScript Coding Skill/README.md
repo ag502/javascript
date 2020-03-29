@@ -248,3 +248,59 @@ function removeItmeSpread(items, removable) {
    ```
 
 4. 화살표 함수로 문맥 혼동을 피하라.
+
+## 8. 클래스로 인터페이스를 간결하게 유지하라.
+
+1.  알기 쉬운 클래스를 만들어라.
+
+    ```javascript
+    function Coupon(price, expiration) {
+      this.price = price;
+      this.expiration = expiration;
+    }
+
+    Coupon.prototype.getPriceText = function() {
+      return this.price;
+    };
+
+    Coupon.prototype.getExpirationMessage = function() {
+      return this.expiration;
+    };
+
+    class Coupon {
+      constructor(price, expiration) {
+        this.price = price;
+        this.expiration = expiration;
+      }
+
+      getPriceText() {
+        return this.price;
+      }
+
+      getExpirationMessage() {
+        return this.expiration;
+      }
+    }
+    ```
+
+2.  상속을 메서드를 공유하라.
+
+    ```javascript
+    function Coupon(price, expiration) {
+      this.price = price;
+      this.expiration = expiration;
+    }
+
+    Coupon.prototype.getPrice = function() {
+      return `${this.price}`;
+    };
+
+    function FlashCoupon(price, expiration) {
+      Coupon.call(this, price, expiration);
+    }
+
+    FlashCoupon.prototype = Object.create(Coupon.prototype);
+    FlashCoupon.prototype.constructor = FlashCoupon;
+
+    class FlashCoupon extends Coupon {}
+    ```
