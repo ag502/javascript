@@ -391,3 +391,47 @@ function removeItmeSpread(items, removable) {
       }
     }
     ```
+
+## 9. 외부 데이터에 접근하라.
+
+1. 프라미스를 이용해 비동기적을 데이터를 가져오라.
+
+   ```javascript
+   function getUserPreferences() {
+     return Promise.resolve({ theme: "dusk" });
+   }
+
+   function getMusic(theme) {
+     if (theme === "dusk") {
+       return Promise.resolve({ album: "music for airports" });
+     }
+     return Promise.resolve({ album: "kind of blue" });
+   }
+
+   getUserPreferences()
+     .then(res => res.theme)
+     .then(res => console.log(res.album));
+   ```
+
+2. async / await 함수로 명로하게 생성하라.
+
+   ```javascript
+   function getUserPreferences() {
+     return Promise.resolve({ theme: "dusk" });
+   }
+
+   async function getTheme() {
+     const { theme } = await getUserPreferences();
+     return theme;
+   }
+
+   getTheme().then(res => console.log(res));
+   ```
+
+3. fetch로 간단한 Ajax 호출을 처리하라.
+
+   ```javascript
+   fetch(url)
+     .then(res => res.json())
+     .then(res => console.log(res));
+   ```
