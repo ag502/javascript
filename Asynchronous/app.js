@@ -310,12 +310,38 @@
 //
 // swapiFilms()
 
-const retrievePosts = async (userID) => {
-    let url = 'https://jsonplaceholder.typicode.com/posts/';
-    let posts = [];
-    posts = await fetch(url).then(data => data.json())
-    return posts.filter(({userId}) => userId === userID);
+// const retrievePosts = async (userID) => {
+//     let url = 'https://jsonplaceholder.typicode.com/posts/';
+//     let posts = [];
+//     posts = await fetch(url).then(data => data.json())
+//     return posts.filter(({userId}) => userId === userID);
+// }
+//
+// retrievePosts(3).then(val => console.log(val))
+
+const firstName = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Hancock')
+        }, 2000)
+    })
 }
 
-retrievePosts(3).then(val => console.log(val))
+const middleName = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('W.')
+        }, 4000)
+    })
+}
 
+(async () => {
+    let names = await Promise.all([firstName(), middleName()])
+    console.log(names)
+})();
+
+const test = async () => {
+    return 'a'
+}
+
+test().then(val => console.log(val))
