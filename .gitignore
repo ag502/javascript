@@ -32,6 +32,7 @@ FurnitureShopPJ/
 # Edit at https://www.toptal.com/developers/gitignore?templates=webstorm,windows,visualstudiocode
 
 ### VisualStudioCode ###
+node_modules
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
